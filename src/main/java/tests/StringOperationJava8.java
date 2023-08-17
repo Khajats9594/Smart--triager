@@ -16,7 +16,7 @@ import static org.testng.Assert.assertTrue;
 public class StringOperationJava8 {
 	
 	  @Test(groups = "smoke", description = "Compare Strings")
-	  public void shouldCompareString() {
+	  public void compareString() {
 
 	        // 1. Arrange
 	        String firstString = "Hello";
@@ -32,7 +32,7 @@ public class StringOperationJava8 {
 	    }
 	  
 	  @Test(groups = "smoke", description = "Compare Case Sensitive Strings")
-	  public void shouldCompareCaseSensitiveString() {
+	  public void compareCaseSensitiveString() {
 
 	        // 1. Arrange
 	        String firstString = "Hello";
@@ -49,7 +49,7 @@ public class StringOperationJava8 {
 	    }
 	  
 	  @Test(groups = "smoke", description = "Compare Strings")
-	    public void testStringLength() {
+	    public void stringLength() {
 		  
 		    //1. Arrange
 	        String str = "Hello, TestNG!";
@@ -63,7 +63,7 @@ public class StringOperationJava8 {
 	    }
 	  
 	  @Test(groups = "smoke", description = "Compare Strings")
-	    public void testStringConcatenation() {
+	    public void stringConcatenation() {
 		  
 		  	//1. Arrange
 	        String str1 = "Hello";
@@ -79,7 +79,7 @@ public class StringOperationJava8 {
 	    }
 	  
 	  @Test(groups = "smoke", description = "Compare Strings")
-	    public void testStringSubstring() {
+	    public void stringCompariingToSubstring() {
 		  	
 		  	//1. Arrange
 	        String str = "TestNG is awesome";
@@ -92,8 +92,9 @@ public class StringOperationJava8 {
 	        //3.Assert
 	        assertEquals(subString, "awesome", "Substring mismatch");
 	    }
+	  
 	  @Test(groups = "smoke", description = "Compare Strings")
-	    public void testStringUpperCase() {
+	    public void stringToUpperCase() {
 		  
 		  	//1.Arrange
 	        String str = "testng";
@@ -108,7 +109,7 @@ public class StringOperationJava8 {
 	    }
 	  
 	  @Test(groups = "smoke", description = "Compare Strings")
-	    public void testStringLowerCase() {
+	    public void stringToLowerCase() {
 		  
 		  	//1.Arrange
 	        String str = "TESTNG";
@@ -123,7 +124,7 @@ public class StringOperationJava8 {
 	    }
 	  
 	  @Test(groups = "smoke", description = "Compare Strings")
-	    public void testStringContains() {
+	    public void stringContains() {
 		  	//1.Arrange
 	        String str = "Welcome to TestNG";
 	        

@@ -8,22 +8,16 @@
     <classes>
       <class name="exceptionTests.StringOperation">
         <methods>
-          <include name="shouldCompareCaseSensitiveString4"/>
-          <include name="shouldCompareCaseSensitiveString2"/>
-          <include name="testStringContains"/>
-          <include name="testStringSubstring"/>
-          <include name="shouldCompareCaseSensitiveString3"/>
-          <include name="testStringConcatenation"/>
-          <include name="shouldCompareCaseSensitiveString"/>
-          <include name="testStringUpperCase"/>
-          <include name="testStringLength"/>
-          <include name="testStringLowerCase"/>
+          <include name="stringToSubstring"/>
+          <include name="compareCaseSensitiveString"/>
+          <include name="stringLength"/>
+          <include name="stringToLowerCase"/>
         </methods>
       </class> <!-- exceptionTests.StringOperation -->
       <class name="exceptionTests.ExceptionTest">
         <methods>
-          <include name="testIndexOutOfBoundsException"/>
           <include name="testArithmeticException2"/>
+          <include name="testIndexOutOfBoundsException"/>
           <include name="testArithmeticException"/>
           <include name="testNullPointerException"/>
           <include name="testMultipleExceptions"/>

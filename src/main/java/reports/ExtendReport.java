@@ -27,7 +27,7 @@ public final class ExtendReport {
 				 .as(new ViewName[] { ViewName.DASHBOARD, ViewName.TEST, ViewName.CATEGORY }).apply();
 			extent.attachReporter(spark);
 			spark.config().setDocumentTitle("selenium");
-			spark.config().setTheme(Theme.DARK);
+			spark.config().setTheme(Theme.STANDARD);
 			spark.config().setReportName("Smart triager");
 			extent.setSystemInfo("Operating System", "Macos");
 			extent.setSystemInfo("browser", "chrome");
