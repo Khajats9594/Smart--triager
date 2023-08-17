@@ -1,0 +1,1211 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>selenium</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Smart triager</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Aug 17, 2023 08:23:48 am</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Aug 17, 2023 08:23:48 am</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Aug 17, 2023 08:23:54 am</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>16</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>16</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
+<div>
+<small data-tooltip='100%'><b>31</b> events failed,
+<b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"shouldCompareCaseSensitiveString":0.019,"shouldCompareCaseSensitiveString2":0.001,"shouldCompareCaseSensitiveString3":0.001,"shouldCompareCaseSensitiveString4":0.001,"testStringConcatenation":0.002,"testStringContains":0.001,"testStringLength":0.001,"testStringLowerCase":0,"testStringSubstring":0.001,"testStringUpperCase":0.004,"testArithmeticException":0.001,"testArithmeticException2":0.001,"testIndexOutOfBoundsException":0,"testMultipleExceptions":0.001,"testNullPointerException":0.018,"Failed Test Cases Summary":0
+};
+</script>
+<div class="row">
+<div class="col-md-4 author-container">
+<div class="card">
+<div class="card-header"><p>Author</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+<tbody>
+<tr>
+<td>Tom</td>
+<td>0</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Jerry</td>
+<td>0</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>SMOKE</td>
+<td>0</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>SANITY</td>
+<td>0</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-md-4 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td>Macos</td>
+</tr>
+<tr>
+<td>browser</td>
+<td>chrome</td>
+</tr>
+<tr>
+<td>java version</td>
+<td>java 18</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 16,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 0,
+failEvents: 31,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 0
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+<ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">Tom</a><a class="dropdown-item" href="#">Jerry</a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">SMOKE</a><a class="dropdown-item" href="#">SANITY</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author="Tom"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">shouldCompareCaseSensitiveString</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:019</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">shouldCompareCaseSensitiveString</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:019</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Tom</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          shouldCompareCaseSensitiveString is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.AssertionError: Comparison of Strings failed expected [0] but found [-32]
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author="Tom"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">shouldCompareCaseSensitiveString2</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">shouldCompareCaseSensitiveString2</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Tom</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          shouldCompareCaseSensitiveString2 is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.AssertionError: Comparison of Strings failed expected [0] but found [-32]
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author="Tom"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">shouldCompareCaseSensitiveString3</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">shouldCompareCaseSensitiveString3</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Tom</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          shouldCompareCaseSensitiveString3 is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.AssertionError: Comparison of Strings failed expected [0] but found [-32]
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="4"
+          author="Tom"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">shouldCompareCaseSensitiveString4</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">shouldCompareCaseSensitiveString4</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Tom</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          shouldCompareCaseSensitiveString4 is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.AssertionError: Comparison of Strings failed expected [0] but found [-32]
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author="Tom"
+          tag="SANITY"
+          device="">
+          <div class="test-detail">
+            <p class="name">testStringConcatenation</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:002</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testStringConcatenation</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Tom</span>
+<span class="badge badge-pill badge-default">SANITY</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testStringConcatenation is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.pass(String)" because the return value of "reports.ExtendManager.getExtentTest()" is null
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="6"
+          author="Jerry"
+          tag="SANITY"
+          device="">
+          <div class="test-detail">
+            <p class="name">testStringContains</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testStringContains</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Jerry</span>
+<span class="badge badge-pill badge-default">SANITY</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testStringContains is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.pass(String)" because the return value of "reports.ExtendManager.getExtentTest()" is null
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="7"
+          author="Tom"
+          tag="SANITY"
+          device="">
+          <div class="test-detail">
+            <p class="name">testStringLength</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testStringLength</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Tom</span>
+<span class="badge badge-pill badge-default">SANITY</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testStringLength is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.AssertionError: Incorrect string length expected [13] but found [14]
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author="Jerry"
+          tag="SANITY"
+          device="">
+          <div class="test-detail">
+            <p class="name">testStringLowerCase</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:000</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testStringLowerCase</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Jerry</span>
+<span class="badge badge-pill badge-default">SANITY</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testStringLowerCase is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.AssertionError: Lowercase conversion failed expected [testnG] but found [testng]
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author="Jerry"
+          tag="SANITY"
+          device="">
+          <div class="test-detail">
+            <p class="name">testStringSubstring</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testStringSubstring</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Jerry</span>
+<span class="badge badge-pill badge-default">SANITY</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testStringSubstring is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.AssertionError: Substring mismatch expected [awesome] but found [ awesom]
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author="Jerry"
+          tag="SANITY"
+          device="">
+          <div class="test-detail">
+            <p class="name">testStringUpperCase</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:004</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testStringUpperCase</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:004</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Jerry</span>
+<span class="badge badge-pill badge-default">SANITY</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testStringUpperCase is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.pass(String)" because the return value of "reports.ExtendManager.getExtentTest()" is null
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="11"
+          author="Tom"
+          tag="SANITY"
+          device="">
+          <div class="test-detail">
+            <p class="name">testArithmeticException</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testArithmeticException</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Tom</span>
+<span class="badge badge-pill badge-default">SANITY</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testArithmeticException is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.ArithmeticException: / by zero
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="12"
+          author="Jerry"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">testArithmeticException2</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testArithmeticException2</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Jerry</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testArithmeticException2 is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.ArithmeticException: / by zero
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="13"
+          author="Jerry"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">testIndexOutOfBoundsException</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:000</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testIndexOutOfBoundsException</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Jerry</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testIndexOutOfBoundsException is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 5
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="14"
+          author="Jerry"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">testMultipleExceptions</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testMultipleExceptions</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Jerry</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testMultipleExceptions is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.NullPointerException: Cannot invoke "String.length()" because "str" is null
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="15"
+          author="Tom"
+          tag="SANITY"
+          device="">
+          <div class="test-detail">
+            <p class="name">testNullPointerException</p>
+            <p class="text-sm">
+              <span>08:23:48 am</span> / <span>00:00:00:018</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testNullPointerException</h5>
+<span class='badge badge-success'>08.17.2023 08:23:48</span>
+<span class='badge badge-danger'>08.17.2023 08:23:48</span>
+<span class='badge badge-default'>00:00:00:018</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Tom</span>
+<span class="badge badge-pill badge-default">SANITY</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          testNullPointerException is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:48</td>
+        <td>
+          java.lang.NullPointerException: Cannot invoke "String.length()" because "str" is null
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Failed Test Cases Summary</p>
+            <p class="text-sm">
+              <span>08:23:54 am</span> / <span>00:00:00:000</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Failed Test Cases Summary</h5>
+<span class='badge badge-success'>08.17.2023 08:23:54</span>
+<span class='badge badge-danger'>08.17.2023 08:23:54</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>08:23:54</td>
+        <td>
+          <table border='1' style='border-collapse: collapse;'><tr><th>Exception</th><th>Failed Test Cases</th></tr><tr><td>java.lang.ArithmeticException</td><td>testArithmeticException<br>testArithmeticException2<br></td></tr><tr><td>java.lang.ArrayIndexOutOfBoundsException</td><td>testIndexOutOfBoundsException<br></td></tr><tr><td>java.lang.AssertionError</td><td>shouldCompareCaseSensitiveString<br>shouldCompareCaseSensitiveString2<br>shouldCompareCaseSensitiveString3<br>shouldCompareCaseSensitiveString4<br>testStringLength<br>testStringLowerCase<br>testStringSubstring<br></td></tr><tr><td>java.lang.NullPointerException</td><td>testStringConcatenation<br>testStringContains<br>testStringUpperCase<br>testMultipleExceptions<br>testNullPointerException<br></td></tr></table>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>7</span>
+</span>
+<p class="name">SMOKE</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>SMOKE</h4>
+<span status="fail" class='badge log badge-danger'>7 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>shouldCompareCaseSensitiveString</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>shouldCompareCaseSensitiveString2</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>shouldCompareCaseSensitiveString3</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>shouldCompareCaseSensitiveString4</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>testArithmeticException2</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>testIndexOutOfBoundsException</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>testMultipleExceptions</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>8</span>
+</span>
+<p class="name">SANITY</p>
+<p class="duration text-sm">8 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>SANITY</h4>
+<span status="fail" class='badge log badge-danger'>8 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>testStringConcatenation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>testStringContains</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>testStringLength</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>testStringLowerCase</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>testStringSubstring</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>testStringUpperCase</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>testArithmeticException</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:48 am</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>testNullPointerException</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
