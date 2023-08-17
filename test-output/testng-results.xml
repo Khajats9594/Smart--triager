@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="12" passed="3" failed="9" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-17T14:46:18 IST" name="Suite" finished-at="2023-08-17T14:46:18 IST" duration-ms="133">
+  <suite started-at="2023-08-17T15:49:13 IST" name="Suite" finished-at="2023-08-17T15:49:13 IST" duration-ms="122">
     <groups>
       <group name="smoke">
         <method signature="ExceptionTest.testArithmeticException()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" name="testArithmeticException" class="exceptionTests.ExceptionTest"/>
@@ -19,9 +19,9 @@
         <method signature="StringOperation.stringToUpperCase()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" name="stringToUpperCase" class="exceptionTests.StringOperation"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-08-17T14:46:18 IST" name="Test" finished-at="2023-08-17T14:46:18 IST" duration-ms="133">
+    <test started-at="2023-08-17T15:49:13 IST" name="Test" finished-at="2023-08-17T15:49:13 IST" duration-ms="122">
       <class name="exceptionTests.ExceptionTest">
-        <test-method signature="testArithmeticException()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T14:46:18 IST" name="testArithmeticException" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="2" status="FAIL">
+        <test-method signature="testArithmeticException()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T15:49:13 IST" name="testArithmeticException" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="1" status="FAIL">
           <exception class="java.lang.ArithmeticException">
             <message>
               <![CDATA[/ by zero]]>
@@ -63,7 +63,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testArithmeticException -->
-        <test-method signature="testArithmeticException2()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T14:46:18 IST" name="testArithmeticException2" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="2" status="FAIL">
+        <test-method signature="testArithmeticException2()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T15:49:13 IST" name="testArithmeticException2" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="1" status="FAIL">
           <exception class="java.lang.ArithmeticException">
             <message>
               <![CDATA[/ by zero]]>
@@ -105,7 +105,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testArithmeticException2 -->
-        <test-method signature="testIndexOutOfBoundsException()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T14:46:18 IST" name="testIndexOutOfBoundsException" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="3" status="FAIL">
+        <test-method signature="testIndexOutOfBoundsException()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T15:49:13 IST" name="testIndexOutOfBoundsException" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="1" status="FAIL">
           <exception class="java.lang.ArrayIndexOutOfBoundsException">
             <message>
               <![CDATA[Index 10 out of bounds for length 5]]>
@@ -147,7 +147,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testIndexOutOfBoundsException -->
-        <test-method signature="testMultipleExceptions()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T14:46:18 IST" name="testMultipleExceptions" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="3" status="FAIL">
+        <test-method signature="testMultipleExceptions()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T15:49:13 IST" name="testMultipleExceptions" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="1" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[Cannot invoke "String.length()" because "str" is null]]>
@@ -189,7 +189,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMultipleExceptions -->
-        <test-method signature="testNullPointerException()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T14:46:18 IST" name="testNullPointerException" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="1" status="FAIL">
+        <test-method signature="testNullPointerException()[pri:0, instance:exceptionTests.ExceptionTest@1af2d44a]" started-at="2023-08-17T15:49:13 IST" name="testNullPointerException" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="1" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[Cannot invoke "String.length()" because "str" is null]]>
@@ -233,7 +233,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
         </test-method> <!-- testNullPointerException -->
       </class> <!-- exceptionTests.ExceptionTest -->
       <class name="exceptionTests.StringOperation">
-        <test-method signature="compareCaseSensitiveString()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T14:46:18 IST" name="compareCaseSensitiveString" description="Compare Case Sensitive Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="20" status="FAIL">
+        <test-method signature="compareCaseSensitiveString()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T15:49:13 IST" name="compareCaseSensitiveString" description="Compare Case Sensitive Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="20" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Comparison of Strings failed expected [0] but found [-32]]]>
@@ -281,15 +281,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- compareCaseSensitiveString -->
-        <test-method signature="stringConcatenation()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T14:46:18 IST" name="stringConcatenation" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="1" status="PASS">
+        <test-method signature="stringConcatenation()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T15:49:13 IST" name="stringConcatenation" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stringConcatenation -->
-        <test-method signature="stringContains()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T14:46:18 IST" name="stringContains" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="2" status="PASS">
+        <test-method signature="stringContains()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T15:49:13 IST" name="stringContains" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stringContains -->
-        <test-method signature="stringLength()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T14:46:18 IST" name="stringLength" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="1" status="FAIL">
+        <test-method signature="stringLength()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T15:49:13 IST" name="stringLength" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="2" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Incorrect string length expected [13] but found [14]]]>
@@ -337,7 +337,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stringLength -->
-        <test-method signature="stringToLowerCase()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T14:46:18 IST" name="stringToLowerCase" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="1" status="FAIL">
+        <test-method signature="stringToLowerCase()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T15:49:13 IST" name="stringToLowerCase" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="2" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Lowercase conversion failed expected [testnG] but found [testng]]]>
@@ -384,7 +384,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stringToLowerCase -->
-        <test-method signature="stringToSubstring()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T14:46:18 IST" name="stringToSubstring" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="1" status="FAIL">
+        <test-method signature="stringToSubstring()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T15:49:13 IST" name="stringToSubstring" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="1" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Substring mismatch expected [awesome] but found [ awesom]]]>
@@ -431,7 +431,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stringToSubstring -->
-        <test-method signature="stringToUpperCase()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T14:46:18 IST" name="stringToUpperCase" description="Compare Strings" finished-at="2023-08-17T14:46:18 IST" duration-ms="6" status="PASS">
+        <test-method signature="stringToUpperCase()[pri:0, instance:exceptionTests.StringOperation@2b91004a]" started-at="2023-08-17T15:49:13 IST" name="stringToUpperCase" description="Compare Strings" finished-at="2023-08-17T15:49:13 IST" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stringToUpperCase -->

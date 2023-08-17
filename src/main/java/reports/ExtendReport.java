@@ -16,7 +16,7 @@ public final class ExtendReport {
 	}
 
 	private static ExtentReports extent;
-	public static ExtentTest test;
+
 
 	public static void initReports() {
 		if (Objects.isNull(extent)) {
@@ -44,19 +44,19 @@ public final class ExtendReport {
 	}
 	
 	public static void createTest(String testcasename) {
-		test = extent.createTest(testcasename);
+		ExtendManager.setExtentTest(extent.createTest(testcasename));
 	}
 	
 	
 	public static void addAuthors(String[] authors) {
 		for(String temp:authors) {
-			ExtendReport.test.assignAuthor(temp);
+			ExtendManager.getExtentTest().assignAuthor(temp);
 		}
 	}
 	
 	public static void addCategories(CategoryType[] categories) {
 		for(CategoryType temp:categories) {
-			ExtendReport.test.assignCategory(temp.toString());
+			ExtendManager.getExtentTest().assignCategory(temp.toString());
 		}
 	}
 }

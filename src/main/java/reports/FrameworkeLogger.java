@@ -10,8 +10,8 @@ public class FrameworkeLogger {
 	private FrameworkeLogger() {
 	}
 
-	private static final Consumer<String> PASS = (message) -> ExtendReport.test.pass(message);
-	private static final Consumer<String> FAIL = (message) -> ExtendReport.test.fail(message);
+	private static final Consumer<String> PASS = (message) -> ExtendManager.getExtentTest().pass(message);
+	private static final Consumer<String> FAIL = (message) -> ExtendManager.getExtentTest().fail(message);
 	private static final Consumer<String> SKIP = (message) -> ExtendManager.getExtentTest().skip(message);
 	private static final Consumer<String> INFO = (message) -> ExtendManager.getExtentTest().info(message);
 	private static final Consumer<String> CONSOLE = (message) -> System.out.println("INFO---->" + message);
