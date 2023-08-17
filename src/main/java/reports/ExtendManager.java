@@ -14,7 +14,6 @@ public class ExtendManager {
 	}
 
 	static void setExtentTest(ExtentTest extentTest) {
-		
 		test.set(extentTest);
 	
 	}
