@@ -24,3 +24,4 @@ This project demonstrates how to integrate Extent Reports with TestNG to generat
      exceptions.
    - Implement the `ITestListener` class to customize how you want to log test results and exceptions.
    - Run your tests using TestNG and observe the generated Extent Report which is at project directory
+   - Grouping the failed test cases according to their exception has been done 
